@@ -3,25 +3,57 @@
 	<head>
 		<title>Andrew's Site</title>
 	
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">	
+		<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">	
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 		<link rel="stylesheet" href="{% static "css/blog.css" %}">
 		<link href="https://fonts.googleapis.com/css?family=Bangers" rel='stylesheet' type='text/css'>
 	</head>
 	
 	<body>
-        <div class="page-header">
-            {% if user.is_authenticated %}
-                <a href="{% url "post_new" %}" class="top_menu"><span class="glyphicon glyphicon-plus"></span></a>
-            {% endif %}
-            <h1><a href="/">Andrew's Site</a></h1>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
+        <nav class="w3-sidenav w3-green w3-card-2" style="display:none">
+            <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-large">Close &times;</a>
+            <a href="#">Link 1</a>		
+            <a href="#">Link 2</a>		
+            <a href="#">Link 3</a>		
+            <a href="#">Link 4</a>		
+            <a href="#">Link 5</a>		
+        </nav>
+    
+        <div id="main">
+            <header class="w3-container w3-green">
+                {% if user.is_authenticated %}
+                    <a href="{% url "post_new" %}" class="top_menu"><span class="glyphicon glyphicon-plus"></span></a>
+                {% endif %}
+                <h1><a href="/">Andrew's Site</a></h1>
+                <span class="w3-opennav w3-xlarge" onclick="w3_open()">&#9776;</span>
+            </header>
+
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-8">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
                 </div>
             </div>
+            <div>
+                <footer class="w3-container w3-green w3-text-white-opacity">
+                    <h5>&copy; created by Andrew Edwards</h5>
+                </footer>
+            </div>
         </div>
+        <script>
+           function w3_open() {
+              document.getElementById("main").style.marginLeft = "25%"
+              document.getElementsByClassName("w3-sidenav")[0].style.width ="25%";
+              document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
+              document.getElementsByClassName("w3-opennav")[0].style.display = 'none';
+            }
+            function w3_close() {
+              document.getElementById("main").style.marginLeft = "0%";
+              document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
+              document.getElementsByClassName("w3-opennav")[0].style.display = "inline-block";
+            } 
+        </script>
 	</body>	
 </html>

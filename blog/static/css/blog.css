@@ -1,5 +1,5 @@
 h1 a {
-	color: #127006;
+	color: #003300;
 	font-family: 'Bangers';
 }
 
@@ -8,28 +8,12 @@ h2 a {
 	font-family: 'Bangers';
 }
 
-body {
-	padding-left: 15px;
-}
-
-.page-header {
-	background-color: #127006;
-	margin-top: 0;
-	padding: 20px 20px 20px 40px;
-}
-
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
-}
-
 .content {
     margin-left: 40px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Bangers', cursive;
 }
 
 .date {
@@ -54,6 +38,7 @@ h1, h2, h3, h4 {
 
 .post {
     margin-bottom: 70px;
+    margin-top: 10px;
 }
 
 .post h1 a, .post h1 a:visited {
