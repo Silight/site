@@ -8,16 +8,13 @@
 			<h1><a href="">Andrew's Site</a></h1>
 		</div>
 		
-		<div>
-			<p>published: date here</p>
-			<h2><a href="">Title of post 1 here</a></h2>
-			<p>This will be the text of the post</p>
-		</div>
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h2><a href="">{{ post.title }}</a></h2>
+				<p>{{ post.text|linebreaks }}</p>
+			</div>
+		{% endfor %}
 		
-		<div>
-			<p>published: date here</p>
-			<h2><a href="">Title of post 2 here</a></h2>
-			<p>This will be the text of the post<p>
-		</div>
 	</body>	
 </html>
