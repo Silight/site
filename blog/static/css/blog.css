@@ -1,15 +1,16 @@
 h1 a {
-	color: #003300;
+	color: #ffffff;
 	font-family: 'Bangers';
 }
 
 h2 a {
-	color: #127006;
+	color: #000000;
 	font-family: 'Bangers';
 }
 
 .content {
-    margin-left: 40px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 h1, h2, h3, h4 {
